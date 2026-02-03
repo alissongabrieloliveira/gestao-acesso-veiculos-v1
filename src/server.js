@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
+const routes = require('./routes/routes');
 
 // Inicializa o app
 const app = express();
@@ -12,8 +13,7 @@ app.use(cors());   // Permite acesso externo (frontend)
 app.use(express.json()); // Entende JSON no corpo da requisição
 
 // Rotas (Placeholder)
-// const routes = require('./routes');
-// app.use(routes);
+app.use(routes);
 
 // Rota de Health Check (para testar se o servidor está de pé)
 app.get('/', (req, res) => {
